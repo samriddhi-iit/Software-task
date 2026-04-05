@@ -10,25 +10,8 @@
 - Output
     - Real-time visualization of motion
     - Color-coded flow map overlaid on video
+  
     
-    ```mermaid
-    flowchart TD
-    	A[Start] --> B[Load video]
-    	B --> C[Read first frame]
-    	C --> D[Convert to grayscale]
-    	D --> E{Next frame available?}
-    	E -- Yes --> F[Read next frame]
-    	F --> G[Convert to grayscale]
-    	G --> H[Compute dense optical flow<br>Farneback]
-    	H --> I[Convert flow to magnitude and angle]
-    	I --> J[Map to HSV / heatmap colors]
-    	J --> K[Overlay flow visualization on frame]
-    	K --> L[Display result]
-    	L --> M[Set current = next]
-    	M --> E
-    	E -- No --> N[Release video and close windows]
-    	N --> O[End]
-    ```
     
 - Procedure:
 
